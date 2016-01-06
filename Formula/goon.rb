@@ -6,7 +6,6 @@ class Goon < Formula
   sha256 "e5ff3e52c6ce11c4da96064addd6e7f1d9ff9e21953cb83fc430d28741a061f2"
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
     bin.install "goon"
   end
 
