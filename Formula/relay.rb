@@ -12,8 +12,8 @@ class Relay < Formula
     doc.install "example_relay.conf"
 
     # Disable Docker on OSX
-    `sed -i.bak 's/native,docker/native/g' #{etc}/cog_relay.conf`
-    rm_f "#{etc}/cog_relay.conf.bak"
+    `sed -i.bak 's/native,docker/native/g' #{etc}/relay.conf`
+    rm_f "#{etc}/relay.conf.bak"
   end
 
   test do
