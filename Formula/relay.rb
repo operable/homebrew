@@ -3,13 +3,13 @@ class Relay < Formula
   homepage "https://github.com/operable/go-relay"
   url "https://github.com/operable/go-relay/releases/download/0.4.0-alpha/cog-relay_darwin_amd64.tar.gz"
   version "0.4.0-alpha"
-  sha256 "d0c02211f38c56fdc831a2b43fb76b6307e52e7e7955a5d62f3d6851649c03aa"
+  sha256 "f266491540edcd2d431f0321450cd142d52d65b38d22757b42c8ecfc65c9345d"
 
   def install
-    bin.install "cog-relay"
-    cp "example_cog_relay.conf", "cog_relay.conf"
-    etc.install "cog_relay.conf"
-    doc.install "example_cog_relay.conf"
+    bin.install "relay"
+    cp "example_relay.conf", "relay.conf"
+    etc.install "relay.conf"
+    doc.install "example_relay.conf"
 
     # Disable Docker on OSX
     `sed -i.bak 's/native,docker/native/g' #{etc}/cog_relay.conf`
@@ -17,6 +17,6 @@ class Relay < Formula
   end
 
   test do
-    `#{bin}/cog-relay --version`
+    `#{bin}/relay --version`
   end
 end
